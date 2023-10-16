@@ -1,3 +1,6 @@
+#do multiple operations
+#delete expression and then display
+
 import tkinter as ttk
 
 cal = ''
@@ -88,29 +91,37 @@ def add_0():
 
 def calculate():
     global cal
-    element = button16.cget("text")
-    text1.insert('end', element)
+    text1.delete(0, 'end')
     l = len(cal)
-    sy = res = 0
+    sy = []
+    c = op = res = 0
     for i in range(0, l):
         if cal[i] == '+' or cal[i] == '-' or cal[i] == '*' or cal[i] == '/':
-            sy = i
-
-    c = result = 0
-    num1= cal[0:sy]
-    num2 = cal[sy+1:l]
-    if num1 and num2:  
-        n1 = int(num1)
-        n2 = int(num2)
+            sy.append(i)
+            op += 1
+    print("op=", op)
+    print(sy)
         
-    if cal[sy] == '+':
-        res = n1 + n2
-    elif cal[sy] == '-':
-        res = n1 - n2
-    elif cal[sy] == '*':
-        res = n1 * n2
-    elif cal[sy] == '/':
-        res = n1 / n2
+    while(c != op):
+        if res == 0:
+            num1= cal[0:sy[0]]
+            res = int(num1)
+            print("e=", res)
+        else:
+           print("e=", res)
+           for i in range(0, op):
+                n1 = int(cal[sy[i]+1: sy[i+1]])
+                print(n1)
+                if cal[sy[i]] == '+':
+                    res += n1
+                elif cal[sy[i]] == '-':
+                    res -= n1
+                elif cal[sy[i]] == '*':
+                    res *= n1
+                elif cal[sy[i]] == '/':
+                    res /= n1
+                c += 1
+        print("c=", c)
     text1.insert('end', res)
     
 def clear_cal():
