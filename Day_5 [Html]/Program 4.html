@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Reservation Form</title>
+</head>
+<body>
+    <form action="">
+        <label for=""><strong>Travel Reservation From</strong></label><br>
+        <label for="mandatory"><strong>* denotes mandatory</strong></label><br>
+        <label for="Name">Full name *: </label><br>
+        <input type="text" name="Name" id="Name" placeholder="FirstName LastName" required><br>
+        <label for="Email">Email address*: </label><br>
+        <input type="text" name="Email" id="Email" required><br>
+        <label for="Tour Pack">Select Tour Package*:</label><br>
+        <select name="Tour Pack" id="Tour Pack" required>
+            <option value="Goa">Goa</option>
+            <option value="Wayanad">Wayanad</option>
+            <option value="Kodagu">Kodagu</option>
+            <option value="Ooty">Ooty</option>
+        </select><br>
+        <label for="Arrival">Arrival date*:</label><br>
+        <input type="date" placeholder="mm/dd/yy" id="Arrival" required><br>
+        <label for="no_Person">Number of persons*: </label><br>
+        <input type="text" required><br>
+        <label for="activities" required>What do you want to avail*?</label><br>
+        <label for="Boarding">Boarding</label>
+        <input type="checkbox" name="Boarding" id="Boarding"><br>
+        <label for="Food">Food</label>
+        <input type="checkbox" name="Food" id="Food"><br>
+        <label for="SightSeeing">Sight Seeing/label>
+        <input type="checkbox" name="SightSeeing" id="SightSeeing"><br>
+        <label for="Discount">Discount Coupon Code:</label><br>
+        <input type="text" name="Discount" id="Discount"><br>
+        <label for="T&C">Terms and Conditions*</label><br>
+        <input type="radio" id="agree" required>
+        <label for="agree">I agree</label>
+        <input type="radio" id="not">
+        <label for="not">I disagree</label><br>
+        <input type="submit" value="Complete reservation">
+    </form>
+</body>
+</html>
